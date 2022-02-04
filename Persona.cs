@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,32 @@ namespace Ejemplo3D
         {
             //DateTime hoy = DateTime.Now;
 
-            //calcular la edad
-            return (20);
+
+            //int edad = hoy.Year - FechaNacimiento.Year;
+
+            //if (FechaNacimiento.Month > hoy.Month)
+            //    edad--;
+
+            DateTime hoy = DateTime.Now;
+
+            TimeSpan intervalo = hoy - FechaNacimiento;
+
+
+            int años = (intervalo.Days / 365);
+
+            return años;
+
+        }
+
+        public void normalizarNombre()
+        {
+            Nombre = Nombre.Trim();
+
+
+            //invocar al método ToTitleCase de la clase Cultureinfo            
+
+            Nombre = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(Nombre);
+
         }
 
     }
