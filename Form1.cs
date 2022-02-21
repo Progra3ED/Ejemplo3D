@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,10 @@ namespace Ejemplo3D
 {
     public partial class Form1 : Form
     {
-        Persona persona = new Persona();
+        
+
+        List<Persona> personas = new List<Persona>();
+        
 
         public Form1()
         {
@@ -20,23 +24,24 @@ namespace Ejemplo3D
         }
 
         private void buttonIngresar_Click(object sender, EventArgs e)
-        {            
+        {
+            Persona persona = new Persona();
             persona.Dpi = textBoxDPI.Text;
             persona.Nombre = textBoxNombre.Text;
             persona.Apellido = textBoxApellido.Text;
             persona.Telefono = textBoxTelefono.Text;
             persona.FechaNacimiento = dateTimePicker1.Value;
-            
+
+            personas.Add(persona);            
         }
 
         private void buttonSalida_Click(object sender, EventArgs e)
-        {                                  
-            labelDPI.Text = persona.Dpi;
-            labelNombre.Text = persona.Nombre;
-            labelApellido.Text = persona.Apellido;
-            labelTelefono.Text = persona.Telefono;
-            labelFechaNacimiento.Text = persona.FechaNacimiento.ToString();
-            label1Edad.Text = persona.edad().ToString();
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+
+            dataGridView1.DataSource = personas;
+            dataGridView1.Refresh();
            
         }
 
@@ -44,6 +49,30 @@ namespace Ejemplo3D
         {
             FormCuenta formularioCuenta = new FormCuenta();
             formularioCuenta.Show();
+        }
+
+        private void Guardar(string fileName)
+        {
+
+            FileStream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+           
+
+            foreach (var persona in personas)
+            {
+                writer.WriteLine(persona.Dpi);
+                writer.WriteLine(persona.Nombre);
+                writer.WriteLine(persona.Apellido);
+                writer.WriteLine(persona.Telefono);
+                writer.WriteLine(persona.FechaNacimiento);
+            }
+                     
+            writer.Close();
+        }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            Guardar("Personas.txt");
         }
     }
 }

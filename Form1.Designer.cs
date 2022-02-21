@@ -41,14 +41,11 @@
             this.buttonIngresar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.labelDPI = new System.Windows.Forms.Label();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.labelApellido = new System.Windows.Forms.Label();
-            this.labelTelefono = new System.Windows.Forms.Label();
-            this.labelFechaNacimiento = new System.Windows.Forms.Label();
-            this.label1Edad = new System.Windows.Forms.Label();
             this.buttonSalida = new System.Windows.Forms.Button();
             this.buttonAbrirCuentas = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonGuardar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -161,69 +158,9 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Salida";
             // 
-            // labelDPI
-            // 
-            this.labelDPI.AutoSize = true;
-            this.labelDPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDPI.Location = new System.Drawing.Point(692, 100);
-            this.labelDPI.Name = "labelDPI";
-            this.labelDPI.Size = new System.Drawing.Size(22, 31);
-            this.labelDPI.TabIndex = 13;
-            this.labelDPI.Text = ".";
-            // 
-            // labelNombre
-            // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(692, 146);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(22, 31);
-            this.labelNombre.TabIndex = 14;
-            this.labelNombre.Text = ".";
-            // 
-            // labelApellido
-            // 
-            this.labelApellido.AutoSize = true;
-            this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelApellido.Location = new System.Drawing.Point(692, 197);
-            this.labelApellido.Name = "labelApellido";
-            this.labelApellido.Size = new System.Drawing.Size(22, 31);
-            this.labelApellido.TabIndex = 15;
-            this.labelApellido.Text = ".";
-            // 
-            // labelTelefono
-            // 
-            this.labelTelefono.AutoSize = true;
-            this.labelTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTelefono.Location = new System.Drawing.Point(692, 246);
-            this.labelTelefono.Name = "labelTelefono";
-            this.labelTelefono.Size = new System.Drawing.Size(22, 31);
-            this.labelTelefono.TabIndex = 16;
-            this.labelTelefono.Text = ".";
-            // 
-            // labelFechaNacimiento
-            // 
-            this.labelFechaNacimiento.AutoSize = true;
-            this.labelFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFechaNacimiento.Location = new System.Drawing.Point(692, 304);
-            this.labelFechaNacimiento.Name = "labelFechaNacimiento";
-            this.labelFechaNacimiento.Size = new System.Drawing.Size(22, 31);
-            this.labelFechaNacimiento.TabIndex = 17;
-            this.labelFechaNacimiento.Text = ".";
-            // 
-            // label1Edad
-            // 
-            this.label1Edad.AutoSize = true;
-            this.label1Edad.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1Edad.Location = new System.Drawing.Point(692, 360);
-            this.label1Edad.Name = "label1Edad";
-            this.label1Edad.Size = new System.Drawing.Size(22, 31);
-            this.label1Edad.TabIndex = 18;
-            this.label1Edad.Text = ".";
-            // 
             // buttonSalida
             // 
-            this.buttonSalida.Location = new System.Drawing.Point(668, 471);
+            this.buttonSalida.Location = new System.Drawing.Point(408, 471);
             this.buttonSalida.Name = "buttonSalida";
             this.buttonSalida.Size = new System.Drawing.Size(136, 56);
             this.buttonSalida.TabIndex = 19;
@@ -241,19 +178,33 @@
             this.buttonAbrirCuentas.UseVisualStyleBackColor = true;
             this.buttonAbrirCuentas.Click += new System.EventHandler(this.buttonAbrirCuentas_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(533, 100);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(525, 331);
+            this.dataGridView1.TabIndex = 21;
+            // 
+            // buttonGuardar
+            // 
+            this.buttonGuardar.Location = new System.Drawing.Point(612, 471);
+            this.buttonGuardar.Name = "buttonGuardar";
+            this.buttonGuardar.Size = new System.Drawing.Size(142, 56);
+            this.buttonGuardar.TabIndex = 22;
+            this.buttonGuardar.Text = "Guardar Datos";
+            this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 579);
+            this.Controls.Add(this.buttonGuardar);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonAbrirCuentas);
             this.Controls.Add(this.buttonSalida);
-            this.Controls.Add(this.label1Edad);
-            this.Controls.Add(this.labelFechaNacimiento);
-            this.Controls.Add(this.labelTelefono);
-            this.Controls.Add(this.labelApellido);
-            this.Controls.Add(this.labelNombre);
-            this.Controls.Add(this.labelDPI);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonIngresar);
@@ -269,6 +220,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,14 +241,10 @@
         private System.Windows.Forms.Button buttonIngresar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label labelDPI;
-        private System.Windows.Forms.Label labelNombre;
-        private System.Windows.Forms.Label labelApellido;
-        private System.Windows.Forms.Label labelTelefono;
-        private System.Windows.Forms.Label labelFechaNacimiento;
-        private System.Windows.Forms.Label label1Edad;
         private System.Windows.Forms.Button buttonSalida;
         private System.Windows.Forms.Button buttonAbrirCuentas;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonGuardar;
     }
 }
 
