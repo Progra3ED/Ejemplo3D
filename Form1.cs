@@ -32,7 +32,8 @@ namespace Ejemplo3D
             persona.Telefono = textBoxTelefono.Text;
             persona.FechaNacimiento = dateTimePicker1.Value;
 
-            personas.Add(persona);            
+            personas.Add(persona);
+            
         }
 
         private void buttonSalida_Click(object sender, EventArgs e)
@@ -56,8 +57,8 @@ namespace Ejemplo3D
 
             FileStream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter writer = new StreamWriter(stream);
-           
 
+            
             foreach (var persona in personas)
             {
                 writer.WriteLine(persona.Dpi);
@@ -73,6 +74,37 @@ namespace Ejemplo3D
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             Guardar("Personas.txt");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Leer(string fileName)
+        {
+            FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+            
+            while (reader.Peek() > -1)
+            {
+                Persona persona = new Persona();
+                persona.Dpi = reader.ReadLine();
+                persona.Nombre = reader.ReadLine();
+                persona.Apellido = reader.ReadLine();
+                persona.Telefono = reader.ReadLine();
+                persona.FechaNacimiento = Convert.ToDateTime(reader.ReadLine());
+                
+                personas.Add(persona);
+
+            }
+
+            reader.Close();
+
+        }
+        private void buttonCargar_Click(object sender, EventArgs e)
+        {
+            Leer("Personas.txt");
         }
     }
 }

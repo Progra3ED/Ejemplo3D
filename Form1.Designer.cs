@@ -45,6 +45,7 @@
             this.buttonAbrirCuentas = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonGuardar = new System.Windows.Forms.Button();
+            this.buttonCargar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,7 +171,7 @@
             // 
             // buttonAbrirCuentas
             // 
-            this.buttonAbrirCuentas.Location = new System.Drawing.Point(896, 471);
+            this.buttonAbrirCuentas.Location = new System.Drawing.Point(934, 471);
             this.buttonAbrirCuentas.Name = "buttonAbrirCuentas";
             this.buttonAbrirCuentas.Size = new System.Drawing.Size(109, 56);
             this.buttonAbrirCuentas.TabIndex = 20;
@@ -188,7 +189,7 @@
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(612, 471);
+            this.buttonGuardar.Location = new System.Drawing.Point(583, 471);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(142, 56);
             this.buttonGuardar.TabIndex = 22;
@@ -196,11 +197,22 @@
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
+            // buttonCargar
+            // 
+            this.buttonCargar.Location = new System.Drawing.Point(768, 471);
+            this.buttonCargar.Name = "buttonCargar";
+            this.buttonCargar.Size = new System.Drawing.Size(122, 56);
+            this.buttonCargar.TabIndex = 23;
+            this.buttonCargar.Text = "Cargar Datos";
+            this.buttonCargar.UseVisualStyleBackColor = true;
+            this.buttonCargar.Click += new System.EventHandler(this.buttonCargar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 579);
+            this.Controls.Add(this.buttonCargar);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonAbrirCuentas);
@@ -220,6 +232,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,6 +258,7 @@
         private System.Windows.Forms.Button buttonAbrirCuentas;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonGuardar;
+        private System.Windows.Forms.Button buttonCargar;
     }
 }
 
